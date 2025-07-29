@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Predictor</title>
+    <link rel="style.css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Car Price Predictor</h2>
+        <form action="/predict" method="POST">
+            <input type="text" name="make" placeholder="Make (e.g., Honda)" required>
+            <input type="text" name="model" placeholder="Model (e.g., Model B)" required>
+            <input type="number" name="year" placeholder="Year (e.g., 2015)" required>
+            <input type="number" step="0.1" name="engine_size" placeholder="Engine Size (e.g., 3.9)" required>
+            <input type="number" name="mileage" placeholder="Mileage (e.g., 74176)" required>
+            <input type="text" name="fuel_type" placeholder="Fuel Type (e.g., Petrol)" required>
+            <input type="text" name="transmission" placeholder="Transmission (e.g., Manual)" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <p class="result">{{ prediction_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
