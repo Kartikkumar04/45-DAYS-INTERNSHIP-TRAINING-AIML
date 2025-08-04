@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    textarea, input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; }
+    input[type="submit"] { padding: 10px 20px; }
+    .bot-response { background: #f0f0f0; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Chatbot 🤖</h2>
+  <form method="POST">
+    <input type="text" name="message" placeholder="Ask me anything..." required>
+    <input type="submit" value="Send">
+  </form>
+  {% if response %}
+    <div class="bot-response">
+      <strong>Bot:</strong> {{ response }}
+    </div>
+  {% endif %}
+</body>
+</html>
